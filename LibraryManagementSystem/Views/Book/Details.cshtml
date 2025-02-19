@@ -1,0 +1,13 @@
+﻿@model LibraryManagementSystem.Models.Book
+
+@{
+    ViewData["Title"] = "Kitap Detayı";
+}
+
+<h2>@Model.Title</h2>
+<p><strong>Tür:</strong> @Model.Genre</p>
+<p><strong>Yayın Tarihi:</strong> @Model.PublishDate.ToShortDateString()</p>
+<p><strong>ISBN:</strong> @Model.ISBN</p>
+<p><strong>Mevcut Kopya:</strong> @Model.CopiesAvailable</p>
+
+<a href="/Book/List" class="btn btn-secondary">Geri Dön</a>

@@ -1,0 +1,14 @@
+﻿@model LibraryManagementSystem.Models.Author
+
+@{
+    ViewData["Title"] = "Yazar Detayı"; // Sayfanın başlığı
+}
+
+<h2>Yazar Bilgileri</h2>
+
+<p><strong>Ad:</strong> @Model.FirstName</p>
+<p><strong>Soyad:</strong> @Model.LastName</p>
+<p><strong>Doğum Tarihi:</strong> @Model.DateOfBirth.ToShortDateString()</p>
+
+<!-- Listeye geri dönmek için buton -->
+<a href="/Author/List" class="btn btn-secondary">Geri Dön</a>
