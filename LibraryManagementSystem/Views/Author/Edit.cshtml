@@ -8,7 +8,8 @@
 
 <!-- Düzenleme formu -->
 <form method="post">
-    <!-- ID alanı gizli, değiştirilemez -->
+    @* ID ALANI GİZLİDİR, DEĞİŞRİLİMEZ KISMI *@
+
     <input type="hidden" asp-for="Id">
 
     <div class="mb-3">
@@ -24,6 +25,6 @@
         <input type="date" class="form-control" asp-for="DateOfBirth" required>
     </div>
 
-    <!-- Güncelleme butonu -->
+    @* GÜNCELLEME BUTONUDUR *@
     <button type="submit" class="btn btn-warning">Güncelle</button>
 </form>

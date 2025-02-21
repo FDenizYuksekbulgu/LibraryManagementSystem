@@ -6,7 +6,7 @@
 
 <h2>@Model.FirstName @Model.LastName yazarını silmek istediğinizden emin misiniz?</h2>
 
-<!-- Silme işlemini onaylamak için form -->
+@* SİLME İŞLEMİNİ ONAYLAMAK İÇİN HAZIRLANAN FORM *@
 <form method="post" action="/Author/DeleteConfirmed/@Model.Id">
     <button type="submit" class="btn btn-danger">Sil</button>
     <a href="/Author/List" class="btn btn-secondary">İptal</a>

@@ -1,12 +1,13 @@
 ﻿@model List<LibraryManagementSystem.Models.Author>
 
 @{
-    ViewData["Title"] = "Yazar Listesi"; // Sayfanın başlığını belirliyoruz.
+    ViewData["Title"] = "Yazar Listesi"; //Sayfanın başlığını belirliyoruz.
 }
 
 <h2>Yazar Listesi</h2>
 
-<!-- Yeni yazar eklemek için buton -->
+@* Yeni yazar ekleme butonu *@
+
 <a href="/Author/Create" class="btn btn-success mb-3">Yeni Yazar Ekle</a>
 
 <table class="table table-bordered">

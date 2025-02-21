@@ -7,19 +7,19 @@ namespace LibraryManagementSystem.Controllers
 {
     public class BookController : Controller
     {
-        // Geçici veri olarak kitapları tutan static liste
+        //Geçici veri olarak kitapları tutan static liste
         private static List<Book> books = new List<Book>
         {
             new Book { Id = 1, Title = "1984", AuthorId = 1, Genre = "Dystopian", PublishDate = new DateTime(1949, 6, 8), ISBN = "123456789", CopiesAvailable = 5 }
         };
 
-        // Kitapları listeleme
+        //Kitapları listeleme
         public IActionResult List()
         {
             return View(books);
         }
 
-        // Kitap detaylarını gösterme
+        //Kitap detaylarını gösterme
         public IActionResult Details(int id)
         {
             var book = books.FirstOrDefault(b => b.Id == id);
@@ -28,26 +28,26 @@ namespace LibraryManagementSystem.Controllers
             return View(book);
         }
 
-        // Yeni kitap ekleme sayfasını açma
+        //Yeni kitap ekleme sayfasını açma
         public IActionResult Create()
         {
             return View();
         }
 
-        // Yeni kitap ekleme işlemi
+        //Yeni kitap ekleme işlemi
         [HttpPost]
         public IActionResult Create(Book book)
         {
             if (ModelState.IsValid)
             {
-                book.Id = books.Count + 1; // Yeni kitabın ID'sini belirle
+                book.Id = books.Count + 1; //Yeni kitabın ID'sini belirle
                 books.Add(book);
                 return RedirectToAction("List");
             }
             return View(book);
         }
 
-        // Kitap düzenleme sayfasını açma
+        //Kitap düzenleme sayfasını açma
         public IActionResult Edit(int id)
         {
             var book = books.FirstOrDefault(b => b.Id == id);
@@ -56,7 +56,7 @@ namespace LibraryManagementSystem.Controllers
             return View(book);
         }
 
-        // Kitap düzenleme işlemi
+        //Kitap düzenleme işlemi
         [HttpPost]
         public IActionResult Edit(Book updatedBook)
         {
@@ -73,7 +73,7 @@ namespace LibraryManagementSystem.Controllers
             return View(updatedBook);
         }
 
-        // Kitap silme onay sayfası
+        //Kitap silme onay sayfası
         public IActionResult Delete(int id)
         {
             var book = books.FirstOrDefault(b => b.Id == id);
@@ -82,7 +82,7 @@ namespace LibraryManagementSystem.Controllers
             return View(book);
         }
 
-        // Kitabı silme işlemi
+        //Kitabı silme işlemi
         [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
